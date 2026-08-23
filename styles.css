@@ -1,0 +1,526 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap');
+
+/* ==========================================================
+   ESTILOS GENERALES Y PALETA DE COLORES - DIONOVEDADES
+   ========================================================== */
+:root {
+    --rosa-principal: #ffb6c1;
+    --rosa-suave: #fff0f5;
+    --rosa-oscuro: #e75480;
+    --azul-pastel: #b0e0e6;
+    --azul-suave: #e0f7fa;
+    --azul-oscuro: #4682b4;
+    --texto-color: #4a4a4a;
+    --blanco: #ffffff;
+}
+
+body {
+    font-family: 'Fredoka', 'Chalkboard SE', 'Comic Sans MS', cursive, sans-serif;
+    background-color: var(--rosa-suave);
+    color: var(--texto-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* ==========================================================
+   CABECERA PRINCIPAL (HEADER)
+   ========================================================== */
+header {
+    background-color: var(--rosa-principal);
+    color: var(--blanco);
+    text-align: center;
+    padding: 2.5rem 1rem;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.4);
+    
+    /* Gomita 3D gigante */
+    box-shadow: 
+      inset 0 6px 12px rgba(255, 255, 255, 0.6),
+      inset 0 -8px 12px rgba(0, 0, 0, 0.15),
+      0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    text-shadow: 2px 2px 0px var(--rosa-oscuro);
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.05rem;
+    margin: 12px auto;
+    background-color: var(--azul-pastel);
+    
+    display: block;                  
+    width: fit-content;             
+    max-width: 90%;                 
+    padding: 10px 22px;              
+    
+    border-radius: 25px;             
+    color: var(--texto-color);
+    border: none;
+    
+    /* Acabado 3D de gomita */
+    box-shadow: 
+      inset 0 4px 6px rgba(255, 255, 255, 0.8),
+      inset 0 -4px 6px rgba(0, 0, 0, 0.12),
+      0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================================
+   NAVEGACIÓN (NAV)
+   ========================================================== */
+nav {
+    background-color: var(--azul-pastel);
+    padding: 12px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--azul-oscuro);
+    
+    /* Efecto gomita en la barra */
+    box-shadow: 
+      inset 0 4px 6px rgba(255, 255, 255, 0.7),
+      inset 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: var(--texto-color);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--rosa-oscuro);
+}
+
+/* Ocultar las líneas <hr> nativas */
+hr {
+    display: none;
+}
+
+/* ==========================================================
+   SECCIONES Y CONTENEDORES GENERALES
+   ========================================================== */
+section {
+    max-width: 1000px;
+    margin: 30px auto;
+    background-color: var(--blanco);
+    padding: 25px;
+    border-radius: 25px;
+    border: none;
+    
+    /* Gomita 3D contenedor */
+    box-shadow: 
+      inset 0 6px 10px rgba(255, 255, 255, 0.9),
+      inset 0 -6px 10px rgba(0, 0, 0, 0.05),
+      0 10px 22px rgba(255, 182, 193, 0.4);
+}
+
+h2 {
+    color: var(--rosa-oscuro);
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 0;
+}
+
+/* ==========================================================
+   BLOQUE DE BÚSQUEDA Y FILTROS INDEPENDIENTES
+   ========================================================== */
+#filtros {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 1. Tarjeta de Búsqueda Directa */
+.bloque-buscador {
+    background-color: var(--blanco);
+    padding: 20px 25px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 
+      inset 0 5px 8px rgba(255, 255, 255, 0.9),
+      inset 0 -5px 8px rgba(0, 0, 0, 0.05),
+      0 8px 18px rgba(255, 182, 193, 0.3);
+    text-align: center;
+}
+
+.caja-busqueda input {
+    width: 90%;
+    max-width: 500px;
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* 2. Tarjeta de Filtros Avanzados */
+.bloque-filtros {
+    background-color: var(--azul-suave);
+    padding: 20px 25px;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 
+      inset 0 5px 8px rgba(255, 255, 255, 0.9),
+      inset 0 -5px 8px rgba(0, 0, 0, 0.05),
+      0 8px 18px rgba(176, 224, 230, 0.4);
+}
+
+#form-filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 10px;
+}
+
+.grupo-precios {
+    display: flex;
+    gap: 10px;
+}
+
+.campo-precio {
+    display: flex;
+    flex-direction: column;
+    width: 90px;
+}
+
+.custom-select-wrapper label,
+.campo-precio label {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--azul-oscuro);
+    margin-bottom: 5px;
+}
+
+/* Inputs de texto y números */
+input {
+    padding: 10px 14px;
+    border: 1px solid var(--rosa-principal);
+    border-radius: 18px;
+    outline: none;
+    background-color: var(--blanco);
+    color: var(--texto-color);
+    font-family: inherit;
+
+    /* Gomita 3D hundida */
+    box-shadow: 
+      inset 0 3px 6px rgba(0, 0, 0, 0.1),
+      inset 0 -2px 4px rgba(255, 255, 255, 0.9),
+      0 3px 6px rgba(0, 0, 0, 0.04);
+    
+    transition: all 0.2s ease;
+}
+
+input:focus {
+    border-color: var(--rosa-oscuro);
+    box-shadow: 
+      inset 0 4px 6px rgba(0, 0, 0, 0.15),
+      0 0 8px rgba(231, 84, 128, 0.4);
+}
+
+/* Desplegable Personalizado Gomita (Categorías) */
+.custom-select-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.gomita-dropdown summary {
+    padding: 10px 16px;
+    border: 1px solid var(--rosa-principal);
+    border-radius: 18px;
+    background-color: var(--blanco);
+    color: var(--texto-color);
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 160px;
+    
+    /* Gomita 3D para el botón cerrado */
+    box-shadow: 
+      inset 0 3px 5px rgba(255, 255, 255, 0.9),
+      inset 0 -3px 5px rgba(0, 0, 0, 0.1),
+      0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.gomita-dropdown summary::-webkit-details-marker {
+    display: none;
+}
+
+.gomita-dropdown summary::after {
+    content: "▼";
+    font-size: 0.75rem;
+    color: var(--rosa-oscuro);
+    margin-left: 10px;
+}
+
+.opciones-gomita {
+    position: absolute;
+    top: 105%;
+    left: 0;
+    width: 100%;
+    min-width: 210px;
+    background-color: var(--blanco);
+    border: 1px solid var(--rosa-principal);
+    border-radius: 20px;
+    padding: 8px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    /* Sombra 3D Flotante */
+    box-shadow: 
+      inset 0 4px 6px rgba(255, 255, 255, 0.9),
+      0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.opciones-gomita label {
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    font-weight: normal !important;
+    margin: 0 !important;
+}
+
+.opciones-gomita label:hover {
+    background-color: var(--rosa-suave);
+    color: var(--rosa-oscuro);
+}
+
+.opciones-gomita input[type="radio"] {
+    display: none; 
+}
+
+/* ==========================================================
+   BOTONES
+   ========================================================== */
+button, .btn-whatsapp {
+    background-color: var(--rosa-principal);
+    color: var(--blanco);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+
+    /* Gomita 3D botones */
+    box-shadow: 
+      inset 0 4px 6px rgba(255, 255, 255, 0.7),
+      inset 0 -4px 6px rgba(0, 0, 0, 0.25),
+      0 6px 12px rgba(0, 0, 0, 0.15);
+    
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-family: inherit;
+}
+
+button:hover {
+    background-color: var(--rosa-oscuro);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 
+      inset 0 6px 8px rgba(255, 255, 255, 0.8),
+      inset 0 -4px 6px rgba(0, 0, 0, 0.25),
+      0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+button:active, .btn-whatsapp:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: 
+      inset 0 2px 4px rgba(255, 255, 255, 0.4),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.3),
+      0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: white;
+    margin-top: 10px;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebc57;
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 
+      inset 0 6px 8px rgba(255, 255, 255, 0.8),
+      inset 0 -4px 6px rgba(0, 0, 0, 0.25),
+      0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ==========================================================
+   TARJETAS DE PRODUCTOS (GRID DEL CATÁLOGO)
+   ========================================================== */
+#contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tarjeta-producto {
+    background-color: var(--blanco);
+    border: 1px solid var(--azul-pastel);
+    border-radius: 22px;
+    padding: 15px;
+    text-align: center;
+    position: relative;
+    
+    /* Gomita 3D tarjeta */
+    box-shadow: 
+      inset 0 5px 8px rgba(255, 255, 255, 0.9),
+      inset 0 -5px 8px rgba(0, 0, 0, 0.08),
+      0 8px 16px rgba(0, 0, 0, 0.1);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-6px);
+    border-color: var(--rosa-principal);
+    box-shadow: 
+      inset 0 6px 10px rgba(255, 255, 255, 1),
+      inset 0 -5px 8px rgba(0, 0, 0, 0.08),
+      0 14px 22px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-producto img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: none;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-producto h3 {
+    color: var(--rosa-oscuro);
+    margin: 10px 0 5px 0;
+    font-size: 1.2rem;
+}
+
+.tarjeta-producto .precio {
+    font-size: 1.3rem;
+    color: var(--azul-oscuro);
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* ==========================================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--rosa-principal);
+    color: var(--blanco);
+    margin-top: 40px;
+    border-top: 3px solid rgba(255, 255, 255, 0.4);
+    
+    /* Gomita 3D footer */
+    box-shadow: 
+      inset 0 6px 10px rgba(255, 255, 255, 0.5),
+      inset 0 -6px 10px rgba(0, 0, 0, 0.15);
+}
+
+footer a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+/* ==========================================================
+   AJUSTES MÓVILES (RESPONSIVE)
+   ========================================================== */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    #form-filtros {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .grupo-precios {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .campo-precio {
+        width: 48%;
+    }
+
+    .custom-select-wrapper, 
+    .gomita-dropdown summary {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 1. Evitar que inputs desborden */
+    input[type="text"], 
+    input[type="number"], 
+    input[type="password"], 
+    select, 
+    textarea {
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    /* 2. Scroll horizontal fluido en tabla de inventario */
+    #gestion-inventario {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    #gestion-inventario table {
+        min-width: 500px;
+    }
+
+    /* 3. Margen para evitar que el botón del carrito tape botones */
+    #catalogo {
+        padding-bottom: 90px;
+    }
+
+    /* 4. Botón flotante adaptado */
+    #barra-carrito {
+        left: 10px;
+        right: 10px;
+        bottom: 15px;
+    }
+
+    #btn-ver-carrito {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* 5. Ajuste de lectura en Modal del Carrito */
+    #modal-carrito > div {
+        max-height: 85vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}

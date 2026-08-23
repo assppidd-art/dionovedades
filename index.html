@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>DIONOVEDADES</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+    <!-- CABECERA PRINCIPAL -->
+    <header>
+        <h1>DIONOVEDADES</h1>
+        <p>Ubicación: Caracas | Envíos locales y nacionales</p>
+    </header>
+
+    <hr>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <nav>
+        <ul>
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#envios-pagos">Pagos y Envíos</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <!-- BUSCADOR -->
+    <section id="filtros">
+        <div class="bloque-buscador">
+            <h2>¿Qué estás buscando?</h2>
+            <div class="caja-busqueda">
+                <input type="text" id="buscar" placeholder="Escribe para buscar al instante (ej. Body, Top)...">
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- SECCIÓN DE CATÁLOGO DINÁMICO -->
+    <section id="catalogo">
+        <h2>Catálogo de Prendas</h2>
+        <div id="contenedor-productos">
+            <p>Cargando catálogo de DIONOVEDADES...</p>
+        </div>
+    </section>
+
+    <!-- BARRA / BOTÓN FLOTANTE DEL CARRITO -->
+    <div id="barra-carrito" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+        <button id="btn-ver-carrito" onclick="toggleCarritoModal()" style="background-color: #25d366; color: white; padding: 14px 22px; border: none; border-radius: 30px; font-weight: bold; font-size: 16px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">
+            🛒 Mi Carrito (<span id="cant-total-carrito">0</span>) - $<span id="monto-total-carrito">0.00</span>
+        </button>
+    </div>
+
+    <!-- MODAL / RESUMEN DEL CARRITO -->
+    <div id="modal-carrito" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1001; justify-content: center; align-items: center;">
+        <div style="background: white; padding: 25px; border-radius: 12px; width: 90%; max-width: 450px; max-height: 80vh; overflow-y: auto; position: relative;">
+            <button onclick="toggleCarritoModal()" style="position: absolute; top: 12px; right: 15px; border: none; background: none; font-size: 22px; cursor: pointer;">❌</button>
+            
+            <h2 style="margin-top: 0; font-size: 20px;">Resumen de tu Pedido</h2>
+            <div id="lista-items-carrito" style="margin-top: 15px;">
+                <!-- Se llena dinámicamente con JavaScript -->
+            </div>
+            
+            <hr style="margin: 15px 0;">
+            <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 18px;">
+                <span>Total a Pagar:</span>
+                <span>$<span id="modal-total-monto">0.00</span></span>
+            </div>
+
+            <a id="btn-enviar-whatsapp" href="#" target="_blank" style="display: block; text-align: center; background-color: #25d366; color: white; text-decoration: none; padding: 14px; border-radius: 8px; font-weight: bold; margin-top: 18px; font-size: 16px;">
+                ✅ Listo, consultar por WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- INFORMACIÓN DE ENVÍOS Y PAGOS -->
+    <section id="envios-pagos">
+        <h2>Métodos de Pago y Envíos</h2>
+        
+        <h3>Métodos de Pago Aceptados</h3>
+        <ul>
+            <li>Pago Móvil / Transferencia bancaria</li>
+            <li>Binance / Efectivo</li>
+        </ul>
+
+        <h3>Políticas de Envío</h3>
+        <p>Despachamos desde <strong>Caracas</strong>.</p>
+        <ul>
+            <li><strong>Entregas locales:</strong> Puntos de encuentro o delivery express.</li>
+            <li><strong>Envíos nacionales:</strong> Envíos cobro en destino a través de agencias de encomienda.</li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+       <p>&copy; <a href="login.html" style="text-decoration: none; color: inherit;">DIONOVEDADES</a> Todos los derechos reservados</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="app-catalogo.js"></script>
+</body>
+</html>

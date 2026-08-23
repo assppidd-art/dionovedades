@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - DIONOVEDADES</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>DIONOVEDADES - Panel de Control</h1>
+        <a href="index.html" id="btn-cerrar-sesion" type="button">Cerrar Sesión</a>
+    </header>
+
+    <hr>
+
+    <main>
+
+        <!-- FORMULARIO PARA CREAR O EDITAR PRENDAS -->
+        <section id="agregar-producto">
+            <h2>Agregar Nueva Prenda</h2>
+
+            <form id="form-producto" enctype="multipart/form-data">
+                <div>
+                    <label for="nombre">Nombre de la prenda:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Vestido Playero" required>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="precio">Precio ($):</label>
+                    <input type="number" id="precio" name="precio" step="0.01" inputmode="decimal" placeholder="25.00" required>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="categoria">Categoría:</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="damas">Ropa Deportiva Damas</option>
+                        <option value="caballeros">Ropa Deportiva Caballeros</option>
+                        <option value="variedad">Variedades</option>
+                    </select>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="tela">Descripción de la tela:</label>
+                    <textarea id="tela" name="tela" rows="3" placeholder="Ej. 100% Algodón, tela ligera..."></textarea>
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="tallas">Tallas disponibles (separadas por coma):</label>
+                    <input type="text" id="tallas" name="tallas" placeholder="Ej. S, M, L">
+                </div>
+
+                <br>
+
+                <div>
+                    <label for="imagen">Imagen del producto:</label>
+                    <input type="file" id="imagen" name="imagen" accept="image/*" required>
+                </div>
+
+                <br>
+
+                <button type="submit">Guardar Producto</button>
+            </form>
+        </section>
+
+        <hr>
+
+        <!-- INVENTARIO Y GESTIÓN DE PRODUCTOS -->
+        <section id="gestion-inventario">
+            <h2>Inventario de Productos</h2>
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Producto</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Visibilidad</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <!-- JavaScript llenará las filas dinámicamente con la base de datos -->
+                <tbody id="tabla-inventario">
+                    <tr>
+                        <td colspan="6">Cargando inventario...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>&copy; 2026 DIONOVEDADES - Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Cargar la SDK de Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Cargar el script de administracion -->
+    <script src="app-admin.js"></script>
+</body>
+</html>
